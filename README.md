@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/4a5073bc-5b5e-497e-aef5-f20e85a933a6)# planning.htb
+# planning.htb
 
 ```
 Hexada@hexada ~/Downloads$ sudo nmap -sS -sC -sV -p- -T5 --max-rate 10000 10.10.11.68                                                                                                 1 ↵  
