@@ -1,5 +1,7 @@
 # planning.htb
 
+Scanning
+
 ```
 Hexada@hexada ~/Downloads$ sudo nmap -sS -sC -sV -p- -T5 --max-rate 10000 10.10.11.68                                                                                                 1 ↵  
 [sudo] password for Hexada: 
@@ -21,6 +23,8 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 363.55 seconds
 ```
+
+brute-force the direcroties
 
 ```
 Hexada@hexada ~/Downloads$ gobuster dir -u http://planning.htb/ -w ~/app/pentesting-wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 25 -x php,txt,html           
@@ -51,6 +55,8 @@ Starting gobuster in directory enumeration mode
 /enroll.php           (Status: 200) [Size: 7053]
 ```
 
+If we brute-force the subdomains, we can find an interesting subdomain `grafana`
+
 ```
 Hexada@hexada ~/Downloads$ ffuf -w /home/Hexada/app/pentesting-wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.planning.htb" -u http://planning.htb -fs 178                   
 
@@ -78,6 +84,8 @@ ________________________________________________
 
 grafana                 [Status: 302, Size: 29, Words: 2, Lines: 3, Duration: 49ms]
 ```
+
+Let's watch this 
 
 ![image](https://github.com/user-attachments/assets/a066f3c1-7f8a-4b7a-8a23-1cdbdae4c461)
 
